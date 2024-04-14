@@ -1,19 +1,30 @@
 def encode(text):
+    j = ""
     for i in text:
         if int(i) < 7:
-            i += 3
+            j += str((int(i) + 3))
         else:
-            i -= 7
-    return text
+            j += str((int(i) - 7))
+    return j
+
+
+def decode(encoded):
+    j = ""
+    for i in encoded:
+        if int(i) >2:
+            j += str((int(i) - 3))
+        else:
+            j += str((int(i) + 7))
+    return j
 
 
 if __name__ == "__main__":
     option = ""
     while option != "3":
         print("""------
-        1. Encode
-        2. Decode
-        3. Exit
+1. Encode
+2. Decode
+3. Exit
         """)
         option = input("Please enter an option: ")
         if option == "1":
